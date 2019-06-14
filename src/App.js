@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 
 import "./App.css";
 
+const typography = { fontFamily: '"Muli", sans-serif', useNextVariants: true };
 const palette = {
     primary: {
         main: "#ffe289"
@@ -20,7 +21,7 @@ const palette = {
     }
 };
 
-const theme = createMuiTheme({ palette });
+const theme = createMuiTheme({ palette, typography });
 
 const App = () => (
     <Router>
