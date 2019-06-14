@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import LinkCard from "../components/LinkCard";
 import Swirl from "../components/Swirl";
 import MarketGraph from "../components/MarketGraph";
+import Box from "../components/Box";
 
 import "./Pages.css";
 
@@ -12,6 +13,7 @@ class Home extends React.Component {
         return (
             <div className="container">
                 <MarketGraph />
+                <Box variant="quantify culture" />
             </div>
         );
     }
