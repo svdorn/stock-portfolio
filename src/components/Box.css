@@ -1,181 +1,154 @@
 .box {
-    --box-width: 360px;
-    --box-height: 316px;
-    --box-color: var(--primary-white);
+    --outline-width: 2px;
+    --scale-time: 200ms;
 
     box-shadow: var(--standard-shadow);
     transition: box-shadow calc(var(--scale-time) * 2);
-    display: inline-block;
-    width: var(--box-width);
-    height: var(--box-height);
-    vertical-align: top;
-    margin: 12px;
-    padding: 25px 20px 0 35px;
-    text-align: left;
-    background-color: var(--box-color);
     position: relative;
-    cursor: pointer;
-    overflow: hidden;
+    display: inline-block;
 }
 
-.box > h2.title {
-    font-size: 22px;
+.borders {
 }
-
-.icon {
-    width: 64px;
-    margin-bottom: 16px;
-}
-
-.cta {
+.borders > div {
     position: absolute;
-    bottom: 50px;
-}
-.cta-text {
-    margin-right: 20px;
 }
 
-/* ALL THE ANIMATION STUFF */
-/* normal */
-
-.outline-top,
-.outline-c-top {
-    position: absolute;
+.L-top,
+.C-top,
+.R-top {
     width: 100%;
-    height: var(--outline-width);
-    transform: scaleX(0.2);
     top: 0;
+    transform: scaleX(0.2);
+    height: var(--outline-width);
 }
-.outline-top {
+.L-top {
+    transform-origin: top left;
     transition: transform var(--scale-time) var(--scale-time) ease-out;
 }
-.outline-c-top {
+.C-top {
+    transform-origin: top middle;
     transition: transform var(--scale-time) calc(var(--scale-time) * 2) ease-out;
 }
-.outline-side-starter {
-    position: absolute;
-    width: var(--outline-width);
-    height: 100%;
-    transform: scaleY(0.2);
-    top: 0;
+.R-top {
+    transform-origin: top right;
     transition: transform var(--scale-time) var(--scale-time) ease-out;
 }
-.outline-bottom {
-    width: 100%;
-    height: var(--outline-width);
-    transform: scaleX(0);
-    bottom: 0;
-}
-.outline-side-follower {
-    height: 100%;
+
+.L-left,
+.R-left,
+.C-left {
     width: var(--outline-width);
-    transform: scaleY(0);
+    height: 100%;
     top: 0;
-}
-.outline-bottom,
-.outline-side-follower {
-    position: absolute;
-    transition: transform var(--scale-time) ease-in;
-}
-.outline-c-left {
-    transform-origin: top left;
     left: 0;
+    transform-origin: top left;
 }
-.outline-c-right {
-    transform-origin: top right;
-    right: 0;
+.L-left {
+    transform: scaleY(0.2);
+    transition: transform var(--scale-time) var(--scale-time) ease-out;
 }
-.outline-c-left,
-.outline-c-right {
-    position: absolute;
-    top: 0;
-    width: var(--outline-width);
-    height: 100%;
+.C-left {
     transform: scaleY(0);
     transition: transform var(--scale-time) var(--scale-time) linear;
 }
-.outline-c-bottom-left {
-    transform-origin: bottom left;
-    left: 0;
+.R-left {
+    transform: scaleY(0);
+    transition: transform var(--scale-time) ease-in;
 }
-.outline-c-bottom-right {
-    transform-origin: bottom right;
+
+.L-right,
+.R-right,
+.C-right {
+    width: var(--outline-width);
+    height: 100%;
+    top: 0;
     right: 0;
+    transform-origin: top right;
 }
-.outline-c-bottom-left,
-.outline-c-bottom-right {
-    position: absolute;
+.L-right {
+    transform: scaleY(0);
+    transition: transform var(--scale-time) ease-in;
+}
+.R-right {
+    transform: scaleY(0.2);
+    transition: transform var(--scale-time) var(--scale-time) ease-out;
+}
+.C-right {
+    transform: scaleY(0);
+    transition: transform var(--scale-time) var(--scale-time) linear;
+}
+
+.L-bottom,
+.R-bottom {
     bottom: 0;
+    left: 0;
     width: 100%;
     height: var(--outline-width);
     transform: scaleX(0);
     transition: transform var(--scale-time) ease-in;
 }
+.L-bottom,
+.C-bottom-left {
+    transform-origin: bottom left;
+}
+.R-bottom,
+.C-bottom-right {
+    transform-origin: bottom right;
+}
+.C-bottom-left,
+.C-bottom-right {
+    bottom: 0;
+    width: 50%;
+    height: var(--outline-width);
+    transform: scaleX(0);
+    transition: transform var(--scale-time) ease-in;
+}
+.C-bottom-left {
+    left: 0;
+}
+.C-bottom-right {
+    right: 0;
+}
 
-/* end normal */
-/* hover */
-
+/* ON HOVER */
 .box:hover {
     box-shadow: var(--hover-shadow);
 }
 
-/* grow across the top all the way immediately */
-.box:hover .outline-top,
-.box:hover .outline-c-top {
+.box:hover .L-top,
+.box:hover .C-top,
+.box:hover .R-top {
     transform: scaleX(1);
     transition: transform var(--scale-time) ease-in;
 }
-/* grow across the side all the way immediately */
-.box:hover .outline-side-starter {
+
+.box:hover .L-left,
+.box:hover .R-right {
     transform: scaleY(1);
     transition: transform var(--scale-time) ease-in;
 }
-/* wait, then grow from nothing all the way across the other side*/
-.box:hover .outline-bottom {
+
+.box:hover .L-right,
+.box:hover .R-left {
+    transform: scaleY(1);
+    transition: transform var(--scale-time) var(--scale-time) ease-out;
+}
+
+.box:hover .C-right,
+.box:hover .C-left {
+    transform: scaleY(1);
+    transform: transform var(--scale-time) var(--scale-time) linear;
+}
+
+.box:hover .L-bottom,
+.box:hover .R-bottom {
     transform: scaleX(1);
     transition: transform var(--scale-time) var(--scale-time) ease-out;
 }
-/* wait, then grow from nothing all the way across the bottom */
-.box:hover .outline-side-follower {
-    transform: scaleY(1);
-    transition: transform var(--scale-time) var(--scale-time) ease-out;
-}
-/* wait, then grow from nothing all the way across the side */
-.box:hover .outline-c-left,
-.box:hover .outline-c-right {
-    transform: scaleY(1);
-    transition: transform var(--scale-time) var(--scale-time) linear;
-}
-.box:hover .outline-c-bottom-left,
-.box:hover .outline-c-bottom-right {
-    transform: scaleX(0.5);
+
+.box:hover .C-bottom-left,
+.box:hover .C-bottom-right {
+    transform: scaleX(1);
     transition: transform var(--scale-time) calc(var(--scale-time) * 2) ease-out;
-}
-
-.star {
-    position: absolute;
-    width: 66px;
-}
-
-/* end hover */
-/* end animations */
-
-@media screen and (max-width: 800px) {
-    .box {
-        margin: 20px 25px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .box {
-        --box-width: 280px;
-        margin: 20px 5px;
-    }
-    .box > h2.title {
-        font-size: 20px;
-    }
-    .cta {
-        position: unset;
-        bottom: unset;
-    }
 }

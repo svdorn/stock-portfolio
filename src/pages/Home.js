@@ -12,8 +12,9 @@ class Home extends React.Component {
     render() {
         return (
             <div className="container">
-                <MarketGraph />
-                <Box variant="quantify culture" />
+                <Box placement="left" color={colors.palette4Dark}>
+                    Here
+                </Box>
             </div>
         );
     }
