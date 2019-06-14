@@ -1,7 +1,7 @@
 import React from "react";
 
-import Button from "../../miscComponents/Button";
-import ShiftArrow from "../../miscComponents/ShiftArrow";
+import Button from "./Button";
+import ShiftArrow from "./ShiftArrow";
 
 import "./Box.css";
 
@@ -36,7 +36,6 @@ export default ({ variant, png, onClick }) => {
                       <div key="bl" styleName="outline-c-bottom-left" style={i.colorStyle} />,
                       <div key="br" styleName="outline-c-bottom-right" style={i.colorStyle} />
                   ]}
-            <img src={i.img + png} styleName="icon" />
             <h2 styleName="title">{i.title}</h2>
             <h4>{i.subtext}</h4>
             <div styleName="cta" style={{ color: i.color }}>
