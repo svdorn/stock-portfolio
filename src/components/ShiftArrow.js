@@ -13,7 +13,7 @@ class ShiftArrow extends Component {
                 width={this.props.width ? this.props.width : "10px"}
                 color={"#000"}
                 style={style}
-                styleName={`${this.props.reversed ? "reverse-" : ""}shift-arrow ${disabledStyle} ${
+                className={`${this.props.reversed ? "reverse-" : ""}shift-arrow ${disabledStyle} ${
                     this.props.nested ? "nested-in-div" : ""
                 }`}
             />

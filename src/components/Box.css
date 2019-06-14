@@ -1,4 +1,4 @@
-.box {
+.box-container {
     --outline-width: 2px;
     --scale-time: 200ms;
 
@@ -112,43 +112,43 @@
 }
 
 /* ON HOVER */
-.box:hover {
+.box-container:hover {
     box-shadow: var(--hover-shadow);
 }
 
-.box:hover .L-top,
-.box:hover .C-top,
-.box:hover .R-top {
+.box-container:hover .L-top,
+.box-container:hover .C-top,
+.box-container:hover .R-top {
     transform: scaleX(1);
     transition: transform var(--scale-time) ease-in;
 }
 
-.box:hover .L-left,
-.box:hover .R-right {
+.box-container:hover .L-left,
+.box-container:hover .R-right {
     transform: scaleY(1);
     transition: transform var(--scale-time) ease-in;
 }
 
-.box:hover .L-right,
-.box:hover .R-left {
+.box-container:hover .L-right,
+.box-container:hover .R-left {
     transform: scaleY(1);
     transition: transform var(--scale-time) var(--scale-time) ease-out;
 }
 
-.box:hover .C-right,
-.box:hover .C-left {
+.box-container:hover .C-right,
+.box-container:hover .C-left {
     transform: scaleY(1);
     transform: transform var(--scale-time) var(--scale-time) linear;
 }
 
-.box:hover .L-bottom,
-.box:hover .R-bottom {
+.box-container:hover .L-bottom,
+.box-container:hover .R-bottom {
     transform: scaleX(1);
     transition: transform var(--scale-time) var(--scale-time) ease-out;
 }
 
-.box:hover .C-bottom-left,
-.box:hover .C-bottom-right {
+.box-container:hover .C-bottom-left,
+.box-container:hover .C-bottom-right {
     transform: scaleX(1);
     transition: transform var(--scale-time) calc(var(--scale-time) * 2) ease-out;
 }

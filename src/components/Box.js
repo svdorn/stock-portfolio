@@ -9,10 +9,10 @@ const lineTypes = {
 };
 
 export default ({ style, className, children, placement, color }) => (
-    <div styleName="box" style={style || {}} className={className || ""}>
-        <div styleName="borders">
+    <div className={"box-container " + className || ""} style={style || {}}>
+        <div className="borders">
             {lineTypes[placement].map(lineType => (
-                <div styleName={lineType} key={lineType} style={{ background: color }} />
+                <div className={lineType} key={lineType} style={{ background: color }} />
             ))}
         </div>
         {children}
