@@ -1,5 +1,25 @@
 :root {
-    --background-color: #edf7fc;
+    --background-gray: #f4f5f7;
+    --background-light-gray: #fff;
+
+    /* red/pink */
+    --palette-1-dark: #fe7774;
+    --palette-1-light: #ffbf95;
+
+    /* purple */
+    --palette-2-dark: #9369fe;
+
+    /* green */
+    --palette-3-light: #61e6b1;
+    --palette-3-dark: #28d5d4;
+
+    /* blue */
+
+    --palette-4-light: #6dd9ff;
+    --palette-4-dark: #3dc2fd;
+
+    /* old colors */
+    --background-color: #f4f5f7;
     --primary-color: #ffe289;
     --primary-blue: #84cdee;
     --primary-yellow: #ffe289;
