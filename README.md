@@ -19,6 +19,12 @@ npm start
 * [Node](https://nodejs.org/en/) - Javascript runtime
 * [npm](https://www.npmjs.com/) - Installs automatically when you intall node
 
+## Credits
+
+* [Recharts](http://recharts.org/en-US/) - Graphing
+* [Alphavantage](https://www.alphavantage.co/) - Stock api
+* [Alphavantage npm](https://www.npmjs.com/package/alphavantage) - npm for alphavantage api
+
 ## Deployment
 
 System to be deployed to AWS elastic beanstalk.
