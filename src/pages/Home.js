@@ -5,7 +5,7 @@ import Swirl from "../components/Swirl";
 import MarketGraph from "../components/MarketGraph";
 import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList";
 
-import { palette1Dark, palette3Dark, palette4Dark } from "../colors";
+import { palette1Dark, palette3Dark, palette4Dark, backgroundLightGray } from "../colors";
 
 import "./Pages.css";
 
@@ -13,7 +13,8 @@ class Home extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="first-frame-container">
+                <div className="first-frame-container home-first-frame">
+                    <Swirl fill={backgroundLightGray} />
                     <h1>Featured Stocks</h1>
                     <FeaturedStocksList />
                 </div>

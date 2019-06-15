@@ -12,10 +12,12 @@
 
 .first-frame-container {
     position: relative;
-    background-size: cover; /* Resize the background image to cover the entire container */
-    background-position: center; /* Center the image */
+    background-color: var(--background-gray);
     padding-top: 80px;
     width: 100%;
+}
+.home-first-frame {
+    height: 500px;
 }
 .section-summary {
 }
@@ -45,10 +47,6 @@
     background-color: var(--primary-yellow);
 }
 
-.home-first-frame {
-    height: 600px;
-    background-image: url("/images/Dogs/Dog2.jpg");
-}
 .first-frame-header {
     color: var(--text-white);
     height: 180px;
