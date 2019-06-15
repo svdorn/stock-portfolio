@@ -9,130 +9,9 @@ import { withRouter } from "react-router";
 
 import "./Header.css";
 
-const routes = [
-    {
-        name: "Adopt",
-        links: [
-            {
-                name: "Application",
-                link: "/application",
-                index: 0,
-                icon: "/images/Icons/pawprint.svg"
-            },
-            {
-                name: "Adoptable Dogs",
-                link: "/adopt",
-                index: 1,
-                icon: "/images/Icons/pawprint.svg"
-            }
-        ],
-        triangleMargin: "-100px"
-    },
-    {
-        name: "Get Involved",
-        links: [
-            {
-                name: "Foster",
-                link: "/foster",
-                index: 2,
-                icon: "/images/Icons/pawprint.svg"
-            },
-            {
-                name: "Volunteer",
-                link: "/volunteer",
-                index: 3,
-                icon: "/images/Icons/pawprint.svg"
-            },
-            {
-                name: "Corporate Sponsorships",
-                link: "/corporate-sponsorships",
-                index: 4,
-                icon: "/images/Icons/pawprint.svg"
-            }
-        ],
-        triangleMargin: "-110px"
-    },
-    {
-        name: "About Us",
-        links: [
-            {
-                name: "Mission",
-                link: "/mission",
-                index: 5,
-                icon: "/images/Icons/pawprint.svg"
-            },
-            {
-                name: "Our Story",
-                link: "/our-story",
-                index: 6,
-                icon: "/images/Icons/pawprint.svg"
-            }
-        ],
-        triangleMargin: "-70px"
-    },
-    {
-        name: "Contact Us",
-        links: [
-            {
-                name: "Contact",
-                link: "/contact",
-                index: 7,
-                icon: "/images/Icons/pawprint.svg"
-            }
-        ],
-        triangleMargin: "-60px"
-    }
-];
+const routes = [];
 
-const mobileRoutes = [
-    {
-        name: "Application",
-        link: "/application",
-        index: 0
-    },
-    {
-        name: "Adoptable Dogs",
-        link: "/adopt",
-        index: 1
-    },
-
-    {
-        name: "Foster",
-        link: "/foster",
-        index: 2
-    },
-    {
-        name: "Volunteer",
-        link: "/volunteer",
-        index: 3
-    },
-    {
-        name: "Corporate Sponsorships",
-        link: "/corporate-sponsorships",
-        index: 4
-    },
-    {
-        name: "Mission",
-        link: "/mission",
-        index: 5
-    },
-    {
-        name: "Our Story",
-        link: "/our-story",
-        index: 6
-    },
-
-    {
-        name: "Contact",
-        link: "/contact",
-        index: 7
-    },
-    {
-        name: "Donate",
-        link: "/donate",
-        index: 8
-    }
-];
+const mobileRoutes = [];
 
 class Header extends Component {
     constructor(props) {
@@ -232,11 +111,6 @@ class Header extends Component {
     };
 
     makeDesktopMenu() {
-        let donateButtonColor = "black";
-        if (this.state.selectedIndex === -1) {
-            donateButtonColor = "yellow";
-        }
-
         return (
             <div className="desktop-menu">
                 {routes.map((route, index) => {
@@ -270,9 +144,6 @@ class Header extends Component {
                         </div>
                     );
                 })}
-                <div>
-                    <DonateButton color={donateButtonColor} />
-                </div>
             </div>
         );
     }
@@ -309,11 +180,7 @@ class Header extends Component {
             <div className="menu">
                 <div>
                     <Link to="/">
-                        <img
-                            src="/images/Icons/PawprintWhite.png"
-                            alt="Senior Dogs Sanctuary"
-                            height={40}
-                        />
+                        <img src="/images/StarGreen.png" alt="Stocks" height={40} />
                     </Link>
                 </div>
                 {this.makeDesktopMenu()}
