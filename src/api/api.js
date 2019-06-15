@@ -14,4 +14,12 @@ async function getDJIA() {
     return response;
 }
 
-export { getDJIA };
+async function getFeaturedStocks() {
+    const response = await alpha.data.batch(["GILD", "AAPL", "SWKS"]);
+
+    console.log("featured: ", response);
+
+    return response;
+}
+
+export { getDJIA, getFeaturedStocks };

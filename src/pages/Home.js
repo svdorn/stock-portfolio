@@ -5,18 +5,29 @@ import Swirl from "../components/Swirl";
 import MarketGraph from "../components/MarketGraph";
 import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList";
 
+import { getFeaturedStocks } from "../api/api";
+
 import { palette1Dark, palette3Dark, palette4Dark, backgroundLightGray } from "../colors";
 
 import "./Pages.css";
 
 class Home extends React.Component {
+    state = {
+        featuredStocks: []
+    };
+    componentDidMount() {
+        getFeaturedStocks().then(response =>
+            this.setState({ featuredStocks: response["Stock Quotes"] })
+        );
+    }
     render() {
         return (
             <div className="container">
                 <div className="first-frame-container home-first-frame">
                     <Swirl fill={backgroundLightGray} />
                     <h1>Featured Stocks</h1>
-                    <FeaturedStocksList />
+                    <FeaturedStocksList stocks={this.state.featuredStocks} />
+                    <MarketGraph />
                 </div>
             </div>
         );

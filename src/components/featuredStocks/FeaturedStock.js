@@ -9,9 +9,9 @@ export default ({ color, placement, stock }) => (
             <h3>{stock.name}</h3>
             <div style={{ color: color }}>
                 {stock.ticker} <br />
-                {stock.change}
+                {stock.price}
                 <br />
-                {stock.percentChange}
+                {stock.volume}
             </div>
         </div>
     </Box>

@@ -5,41 +5,55 @@ import "./FeaturedStocks.css";
 
 import { palette1Dark, palette3Dark, palette4Dark } from "../../colors";
 
-const stocks = [
+const predefinedStocks = [
     {
         color: palette3Dark,
         placement: "left",
         name: "Gilead Sciences",
-        ticker: "GILD",
-        change: "+$10.45",
-        percentChange: "+32.00%"
+        ticker: "GILD"
     },
     {
         color: palette4Dark,
         placement: "center",
         name: "Apple",
-        ticker: "AAPL",
-        change: "+$2.45",
-        percentChange: "+2.30%"
+        ticker: "AAPL"
     },
     {
         color: palette1Dark,
         placement: "right",
         name: "Skyworks Solutions",
-        ticker: "SWKS",
-        change: "-$3.45",
-        percentChange: "-12.09%"
+        ticker: "SWKS"
     }
 ];
 
-console.log("stocks: ", stocks);
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
-export default () => (
-    <section className="featured-stocks-list">
-        <div>
-            {stocks.map(stock => (
-                <FeaturedStock color={stock.color} placement={stock.placement} stock={stock} />
-            ))}
-        </div>
-    </section>
-);
+export default ({ stocks }) => {
+    for (let i = 0; i < stocks.length; i++) {
+        let stock = stocks[i];
+        const found = predefinedStocks.find(
+            st => st.ticker.toString() === stock["1. symbol"].toString()
+        );
+
+        if (found) {
+            found.price = "$" + parseFloat(stock["2. price"]).toFixed(2);
+            found.volume = numberWithCommas(stock["3. volume"]);
+        }
+    }
+    return (
+        <section className="featured-stocks-list">
+            <div>
+                {predefinedStocks.map(stock => (
+                    <FeaturedStock
+                        key={stock.ticker}
+                        color={stock.color}
+                        placement={stock.placement}
+                        stock={stock}
+                    />
+                ))}
+            </div>
+        </section>
+    );
+};
