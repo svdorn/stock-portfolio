@@ -5,7 +5,7 @@ import Swirl from "../components/Swirl";
 import Graph from "../components/Graph";
 import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList";
 
-import { backgroundLightGray } from "../colors";
+import { backgroundLightGray, palette3Dark } from "../colors";
 
 import { getStock } from "../api/api";
 
@@ -28,14 +28,14 @@ class Stocks extends React.Component {
     }
 
     componentDidMount() {
-        getStock(this.state.ticker).then(response =>
-            this.setState({
-                intraday: response.intraday.intraday,
-                lowDomain: response.intraday.lowDomain,
-                highDomain: response.intraday.highDomain,
-                daily: response.daily
-            })
-        );
+        // getStock(this.state.ticker).then(response =>
+        //     this.setState({
+        //         intraday: response.intraday.intraday,
+        //         lowDomain: response.intraday.lowDomain,
+        //         highDomain: response.intraday.highDomain,
+        //         daily: response.daily
+        //     })
+        // );
     }
 
     render() {
@@ -43,11 +43,17 @@ class Stocks extends React.Component {
 
         return (
             <div className="container">
-                <div className="first-frame-container home-first-frame">
+                <div className="first-frame-container stocks-first-frame">
                     <Swirl fill={backgroundLightGray} />
-                    {ticker}
+                    <b>{ticker}</b>
+                    <div>$17.82</div>
                 </div>
-                <Graph data={intraday} lowDomain={lowDomain} highDomain={highDomain} />
+                {/*<Graph
+                    data={intraday}
+                    lowDomain={lowDomain}
+                    highDomain={highDomain}
+                    color={palette3Dark}
+                />*/}
             </div>
         );
     }

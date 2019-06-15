@@ -63,9 +63,9 @@ async function getFeaturedStocks() {
 
 async function getStock(ticker) {
     const intraday = await getIntraday(ticker);
-    const daily = await getDaily(ticker);
+    const daily = null;
 
-    return { intraday, daily: getData(daily) };
+    return { intraday, daily };
 }
 
 async function getIntraday(ticker) {

@@ -19,15 +19,12 @@
 .home-first-frame {
     height: 500px;
 }
-.section-summary {
+.stocks-first-frame {
+    height: 700px;
+    text-align: left;
 }
-.section-summary > div {
-    display: inline-flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-.section-summary > div > div {
-    margin: 30px;
+.stocks-first-frame > b {
+    font-size: 26px;
 }
 
 .frame-container {
