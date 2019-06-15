@@ -5,9 +5,9 @@ import Swirl from "../components/Swirl";
 import MarketGraph from "../components/MarketGraph";
 import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList";
 
-import { getFeaturedStocks } from "../api/api";
+import { backgroundLightGray } from "../colors";
 
-import { palette1Dark, palette3Dark, palette4Dark, backgroundLightGray } from "../colors";
+import { getFeaturedStocks } from "../api/api";
 
 import "./Pages.css";
 

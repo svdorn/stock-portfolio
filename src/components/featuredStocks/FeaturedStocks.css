@@ -20,7 +20,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-.featured-stocks-list > div > div {
+.featured-stocks-list > div > a {
     margin: 20px;
 }
 

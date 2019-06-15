@@ -47,12 +47,7 @@ export default ({ stocks }) => {
         <section className="featured-stocks-list">
             <div>
                 {predefinedStocks.map(stock => (
-                    <FeaturedStock
-                        key={stock.ticker}
-                        color={stock.color}
-                        placement={stock.placement}
-                        stock={stock}
-                    />
+                    <FeaturedStock key={stock.ticker} stock={stock} />
                 ))}
             </div>
         </section>
