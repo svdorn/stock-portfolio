@@ -19,6 +19,20 @@
 .home-first-frame {
     height: 500px;
 }
+.portfolio-container {
+    background-color: var(--background-gray);
+}
+.portfolio-container > h1 {
+    margin: 0;
+    padding: 20px 0;
+}
+.portfolio {
+    max-width: 900px;
+    margin: auto;
+}
+.market-graph {
+    height: 400px;
+}
 .stocks-first-frame {
     height: 700px;
     text-align: left;

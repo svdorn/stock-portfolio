@@ -1,9 +1,6 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
 import Swirl from "../components/Swirl";
 import Graph from "../components/Graph";
-import FeaturedStocksList from "../components/stocks/FeaturedStocksList";
 
 import { backgroundLightGray, palette3Dark } from "../colors";
 
@@ -28,14 +25,14 @@ class Stocks extends React.Component {
     }
 
     componentDidMount() {
-        // getStock(this.state.ticker).then(response =>
-        //     this.setState({
-        //         intraday: response.intraday.intraday,
-        //         lowDomain: response.intraday.lowDomain,
-        //         highDomain: response.intraday.highDomain,
-        //         daily: response.daily
-        //     })
-        // );
+        getStock(this.state.ticker).then(response =>
+            this.setState({
+                intraday: response.intraday.intraday,
+                lowDomain: response.intraday.lowDomain,
+                highDomain: response.intraday.highDomain,
+                daily: response.daily
+            })
+        );
     }
 
     render() {
@@ -48,12 +45,12 @@ class Stocks extends React.Component {
                     <b>{ticker}</b>
                     <div>$17.82</div>
                 </div>
-                {/*<Graph
+                <Graph
                     data={intraday}
                     lowDomain={lowDomain}
                     highDomain={highDomain}
                     color={palette3Dark}
-                />*/}
+                />
             </div>
         );
     }

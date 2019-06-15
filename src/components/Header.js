@@ -190,15 +190,15 @@ class Header extends Component {
     }
 }
 
-const DonateButton = ({ color }) => (
-    <div>
-        <Button component={GoToDonate} className={"header-button " + color} size="small">
-            Donate
-        </Button>
-    </div>
-);
-
-const GoToDonate = props => <Link to="/donate" {...props} />;
+// const DonateButton = ({ color }) => (
+//     <div>
+//         <Button component={GoToDonate} className={"header-button " + color} size="small">
+//             Donate
+//         </Button>
+//     </div>
+// );
+//
+// const GoToDonate = props => <Link to="/donate" {...props} />;
 
 const DesktopMenuItem = ({ name, link, index, icon }) => {
     return (
