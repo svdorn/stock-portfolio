@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Swirl from "../components/Swirl";
 import Graph from "../components/Graph";
-import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList";
+import FeaturedStocksList from "../components/stocks/FeaturedStocksList";
 
 import { backgroundLightGray, palette3Dark } from "../colors";
 

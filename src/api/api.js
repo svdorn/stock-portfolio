@@ -55,6 +55,34 @@ async function getDJIA() {
     return response;
 }
 
+async function getPortfolioStocks() {
+    const response = await alpha.data.batch([
+        "STZ",
+        "TDG",
+        "FB",
+        "BA",
+        "MA",
+        "SCHW",
+        "AABA",
+        "MSFT",
+        "AMZN",
+        "GOOGL",
+        "AAPL",
+        "PYPL",
+        "CHTR",
+        "NFLX",
+        "CRM",
+        "DIS",
+        "V",
+        "CACC",
+        "PTC",
+        "BOX",
+        "GILD"
+    ]);
+
+    return response;
+}
+
 async function getFeaturedStocks() {
     const response = await alpha.data.batch(["GILD", "AAPL", "SWKS"]);
 
@@ -123,4 +151,14 @@ async function getWma(ticker) {
     return wma;
 }
 
-export { getDJIA, getFeaturedStocks, getIntraday, getDaily, getMonthly, getSma, getWma, getStock };
+export {
+    getDJIA,
+    getFeaturedStocks,
+    getPortfolioStocks,
+    getIntraday,
+    getDaily,
+    getMonthly,
+    getSma,
+    getWma,
+    getStock
+};
