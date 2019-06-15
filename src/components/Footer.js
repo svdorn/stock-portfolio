@@ -5,43 +5,9 @@ import SocialLinks from "../components/SocialLinks";
 
 import "./Footer.css";
 
-const routes = [
-    {
-        name: "Application",
-        link: "/application"
-    },
-    {
-        name: "Adoptable Dogs",
-        link: "/adopt"
-    },
-    {
-        name: "Foster",
-        link: "/foster"
-    },
-    {
-        name: "Volunteer",
-        link: "/volunteer"
-    }
-];
+const routes = [];
 
-const routes2 = [
-    {
-        name: "Corporate Sponsorships",
-        link: "/corporate-sponsorships"
-    },
-    {
-        name: "Mission",
-        link: "/mission"
-    },
-    {
-        name: "Our Story",
-        link: "/our-story"
-    },
-    {
-        name: "Contact",
-        link: "/contact"
-    }
-];
+const routes2 = [];
 
 class Footer extends Component {
     render() {
@@ -52,7 +18,7 @@ class Footer extends Component {
                 </div>
                 <div className="footer-logo">
                     <Link to="/">
-                        <b>Senior Paws Sanctuary</b>
+                        <b>Stephen{"'"}s Stocks</b>
                     </Link>
                     <div className="footer-links">
                         <SocialLinks />
