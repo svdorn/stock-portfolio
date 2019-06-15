@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 // import all pages
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import Stocks from "./pages/Stocks";
 
 import "./App.css";
 
@@ -32,6 +33,7 @@ const App = () => (
                 <div className="App">
                     <Route path="/" exact component={Home} />
                     <Route path="/contact" component={Contact} />
+                    <Route path="/stocks/:ticker" component={Stocks} />
                 </div>
 
                 <Footer />
