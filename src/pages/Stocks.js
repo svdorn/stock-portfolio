@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Swirl from "../components/Swirl";
-import MarketGraph from "../components/MarketGraph";
+import Graph from "../components/Graph";
 import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList";
 
 import { backgroundLightGray } from "../colors";
@@ -19,21 +19,31 @@ class Stocks extends React.Component {
         const { ticker } = props.match.params;
 
         this.state = {
-            ticker
+            ticker,
+            intraday: [],
+            daily: []
         };
     }
 
     componentDidMount() {
-        getStock(this.state.ticker).then(response => console.log("response: ", response));
+        getStock(this.state.ticker).then(response =>
+            this.setState({
+                intraday: response.intraday,
+                daily: response.daily
+            })
+        );
     }
 
     render() {
+        const { intraday, ticker } = this.state;
+
         return (
             <div className="container">
                 <div className="first-frame-container home-first-frame">
                     <Swirl fill={backgroundLightGray} />
-                    {this.state.ticker}
+                    {ticker}
                 </div>
+                <Graph data={intraday} />
             </div>
         );
     }

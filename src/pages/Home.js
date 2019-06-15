@@ -2,7 +2,6 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Swirl from "../components/Swirl";
-import MarketGraph from "../components/MarketGraph";
 import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList";
 
 import { backgroundLightGray } from "../colors";
@@ -27,7 +26,6 @@ class Home extends React.Component {
                     <Swirl fill={backgroundLightGray} />
                     <h1>Featured Stocks</h1>
                     <FeaturedStocksList stocks={this.state.featuredStocks} />
-                    <MarketGraph />
                 </div>
             </div>
         );
