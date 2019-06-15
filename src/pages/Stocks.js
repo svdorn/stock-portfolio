@@ -21,21 +21,25 @@ class Stocks extends React.Component {
         this.state = {
             ticker,
             intraday: [],
-            daily: []
+            daily: [],
+            lowDomain: 0,
+            highDomain: 200
         };
     }
 
     componentDidMount() {
         getStock(this.state.ticker).then(response =>
             this.setState({
-                intraday: response.intraday,
+                intraday: response.intraday.intraday,
+                lowDomain: response.intraday.lowDomain,
+                highDomain: response.intraday.highDomain,
                 daily: response.daily
             })
         );
     }
 
     render() {
-        const { intraday, ticker } = this.state;
+        const { highDomain, lowDomain, intraday, ticker } = this.state;
 
         return (
             <div className="container">
@@ -43,7 +47,7 @@ class Stocks extends React.Component {
                     <Swirl fill={backgroundLightGray} />
                     {ticker}
                 </div>
-                <Graph data={intraday} />
+                <Graph data={intraday} lowDomain={lowDomain} highDomain={highDomain} />
             </div>
         );
     }

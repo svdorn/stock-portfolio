@@ -1,8 +1,7 @@
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from "recharts";
 
-const Graph = ({ data }) => {
-    console.log("data: ", data);
+const Graph = ({ data, highDomain, lowDomain }) => {
     return (
         <div
             header={<h1>Dow Jones Industrial Average (4 Months)</h1>}
@@ -18,10 +17,10 @@ const Graph = ({ data }) => {
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                 >
                     <XAxis dataKey="name" />
-                    <YAxis />
+                    <YAxis domain={[lowDomain, highDomain]} />
                     <Tooltip />
                     <Legend />
-                    <Line dataKey="data" stroke="black" />
+                    <Line dataKey="Price" stroke="black" dot={false} />
                 </LineChart>
             )}
         </div>

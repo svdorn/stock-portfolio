@@ -15,7 +15,7 @@ function getData(data) {
         if (i.toString() !== "Meta Data") {
             for (let j in data[i]) {
                 if (j !== undefined) {
-                    arr.push({ name: j, data: parseFloat(data[i][j]["1. open"]) });
+                    arr.push({ name: j, Price: parseFloat(data[i][j]["1. open"]) });
                 }
             }
         }
@@ -25,6 +25,28 @@ function getData(data) {
     }
 
     return newData;
+}
+
+function formatIntradayDate(date) {
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let am_pm = "am";
+
+    if (hour === 12) {
+        am_pm = "pm";
+    } else if (hour === 0) {
+        hour = 12;
+    } else if (hour > 12) {
+        hour -= 12;
+        am_pm = "pm";
+    }
+
+    let mins = minutes.toString();
+    if (mins.length < 2) {
+        mins = "0" + mins;
+    }
+
+    return hour.toString() + ":" + mins + am_pm;
 }
 
 async function getDJIA() {
@@ -50,17 +72,31 @@ async function getIntraday(ticker) {
     let intraday = await alpha.data.intraday(ticker, "compact", "json", "5min");
 
     const today = new Date();
-    const date = today.getDate();
+    let date = today.getDate();
+    if (today.getDay() === 0) {
+        date -= 2;
+    } else if (today.getDay() === 6) {
+        date -= 1;
+    }
     let intra = [];
     intraday = getData(intraday);
+    let lowDomain = Infinity;
+    let highDomain = 0;
     for (let i = 0; i < intraday.length; i++) {
         const day = new Date(intraday[i].name);
         if (day.getDate() === date) {
+            if (intraday[i].Price < lowDomain) {
+                lowDomain = Math.floor(intraday[i].Price);
+            }
+            if (intraday[i].Price > highDomain) {
+                highDomain = Math.ceil(intraday[i].Price);
+            }
+            intraday[i].name = formatIntradayDate(day);
             intra.push(intraday[i]);
         }
     }
 
-    return intra;
+    return { intraday: intra, lowDomain, highDomain };
 }
 
 async function getDaily(ticker) {
