@@ -3,6 +3,7 @@ import Swirl from "../components/Swirl";
 import FeaturedStocksList from "../components/stocks/FeaturedStocksList";
 import Graph from "../components/Graph";
 import Portfolio from "../components/stocks/Portfolio";
+import Search from "../components/Search";
 
 import { backgroundLightGray, backgroundGray, palette3Dark } from "../colors";
 
@@ -57,11 +58,15 @@ class Home extends React.Component {
                         color={palette3Dark}
                     />
                 </div>
-                <div className="portfolio-container">
+                <div className="portfolio-container frame-container">
+                    <Swirl fill={backgroundLightGray} />
                     <h1>Portfolio</h1>
                     <div className="portfolio">
                         <Portfolio stocks={portfolio} />
                     </div>
+                </div>
+                <div>
+                    <Search />
                 </div>
             </div>
         );

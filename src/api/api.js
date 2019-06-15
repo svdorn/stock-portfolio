@@ -151,6 +151,12 @@ async function getWma(ticker) {
     return wma;
 }
 
+async function search(keywords) {
+    const stocks = await alpha.data.search(keywords);
+
+    return stocks;
+}
+
 export {
     getDJIA,
     getFeaturedStocks,
@@ -160,5 +166,6 @@ export {
     getMonthly,
     getSma,
     getWma,
-    getStock
+    getStock,
+    search
 };
