@@ -17,24 +17,7 @@
     padding-top: 80px;
     width: 100%;
 }
-
-.collapse-box {
-    display: flex;
-    vertical-align: top;
-    --box-width: 460px;
-    width: var(--box-width);
-}
-
-.box {
-    --box-color: var(--primary-white);
-
-    padding: 30px;
-    text-align: left;
-    background-color: var(--box-color);
-    cursor: pointer;
-}
 .section-summary {
-    padding: 10px 0 80px 0;
 }
 .section-summary > div {
     display: inline-flex;

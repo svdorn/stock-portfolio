@@ -9,6 +9,7 @@ const backgroundGray = "#f4f5f7",
     palette4Dark = "#3dc2fd";
 
 export {
+    backgroundGray,
     backgroundLightGray,
     palette1Dark,
     palette1Light,
@@ -20,6 +21,7 @@ export {
 };
 
 export default {
+    backgroundGray,
     backgroundLightGray,
     palette1Dark,
     palette1Light,

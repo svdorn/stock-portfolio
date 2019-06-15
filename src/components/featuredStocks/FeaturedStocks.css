@@ -1,0 +1,25 @@
+.collapse-box {
+    display: flex;
+    vertical-align: top;
+    --box-width: 250px;
+    width: var(--box-width);
+    --box-color: var(--primary-white);
+    background-color: var(--box-color);
+    cursor: pointer;
+}
+
+.box {
+    padding: 10px 30px 30px 30px;
+    text-align: left;
+}
+
+.featured-stocks-list {
+}
+.featured-stocks-list > div {
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.featured-stocks-list > div > div {
+    margin: 20px;
+}
