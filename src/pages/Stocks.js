@@ -7,7 +7,7 @@ import FeaturedStocksList from "../components/featuredStocks/FeaturedStocksList"
 
 import { backgroundLightGray } from "../colors";
 
-import { getFeaturedStocks } from "../api/api";
+import { getStock } from "../api/api";
 
 import "./Pages.css";
 
@@ -21,6 +21,10 @@ class Stocks extends React.Component {
         this.state = {
             ticker
         };
+    }
+
+    componentDidMount() {
+        getStock(this.state.ticker).then(response => console.log("response: ", response));
     }
 
     render() {
