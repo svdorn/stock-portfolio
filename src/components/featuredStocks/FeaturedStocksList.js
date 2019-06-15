@@ -42,6 +42,7 @@ export default ({ stocks }) => {
             found.volume = numberWithCommas(stock["3. volume"]);
         }
     }
+
     return (
         <section className="featured-stocks-list">
             <div>

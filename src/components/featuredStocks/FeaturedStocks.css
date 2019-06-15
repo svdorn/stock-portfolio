@@ -23,3 +23,11 @@
 .featured-stocks-list > div > div {
     margin: 20px;
 }
+
+.price {
+    font-size: 18px;
+}
+.volume {
+    font-size: 12px;
+    margin-top: 10px;
+}
