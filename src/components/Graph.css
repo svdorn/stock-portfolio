@@ -1,4 +1,7 @@
 .graph {
+    width: 900px;
+    max-width: 92%;
+    margin: auto;
 }
 .graph > div {
     margin: auto;
