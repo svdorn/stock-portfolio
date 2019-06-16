@@ -65,8 +65,18 @@ class Home extends React.Component {
                         <Portfolio stocks={portfolio} />
                     </div>
                 </div>
-                <div>
-                    <Search />
+                <div className="value-props last-frame">
+                    <div>
+                        <img src="/images/StarGreen.png" alt="Stocks" height={40} />
+                        <h3>Invest for Free</h3>
+                        <p>Everyone should be able to invest for free.</p>
+                    </div>
+                    <div>
+                        <img src="/images/StarPurple.png" alt="Stocks" height={40} />
+                    </div>
+                    <div>
+                        <img src="/images/StarRed.png" alt="Stocks" height={40} />
+                    </div>
                 </div>
             </div>
         );

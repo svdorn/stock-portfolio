@@ -48,6 +48,16 @@
     position: relative;
 }
 
+.value-props {
+    display: inline-flex;
+    margin: auto;
+}
+.value-props > div {
+    text-align: left;
+    width: 250px;
+    margin: 0 40px;
+}
+
 .background-blue {
     background-color: var(--primary-blue);
 }
