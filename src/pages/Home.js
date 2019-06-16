@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button";
 import Swirl from "../components/Swirl";
 import FeaturedStocksList from "../components/stocks/FeaturedStocksList";
 import Graph from "../components/Graph";
@@ -45,8 +46,18 @@ class Home extends React.Component {
             <div className="container">
                 <div className="first-frame-container frame-container">
                     <Swirl fill={backgroundLightGray} />
-                    <h1>Featured Stocks</h1>
-                    <FeaturedStocksList stocks={featuredStocks} />
+                    <div>
+                        <h1>Invest like a Hedge Fund, for Free</h1>
+                        <p>
+                            We believe everyone should have the same access to top-quality
+                            investments. Now you can, for free.
+                        </p>
+                        <Button>Check out our Portfoilo</Button>
+                    </div>
+                    <div>
+                        <h3>Featured Stocks</h3>
+                        <FeaturedStocksList stocks={featuredStocks} />
+                    </div>
                 </div>
                 <div className="market-graph frame-container">
                     <Swirl fill={backgroundGray} />
