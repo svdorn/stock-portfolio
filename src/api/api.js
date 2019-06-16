@@ -76,8 +76,7 @@ async function getPortfolioStocks() {
         "V",
         "CACC",
         "PTC",
-        "BOX",
-        "GILD"
+        "BOX"
     ]);
 
     return response;

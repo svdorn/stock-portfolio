@@ -1,5 +1,5 @@
 import React from "react";
-import FeaturedStock from "./FeaturedStock";
+import PortfolioStocks from "./PortfolioStocks";
 
 import "./FeaturedStocks.css";
 
@@ -125,8 +125,7 @@ const predefinedStocks = [
         placement: "center",
         name: "Box",
         ticker: "BOX"
-    },
-    { color: palette3Dark, placement: "right", name: "Gilead Sciences", ticker: "GILD" }
+    }
 ];
 
 function numberWithCommas(x) {
@@ -150,7 +149,7 @@ export default ({ stocks }) => {
         <section className="featured-stocks-list">
             <div>
                 {predefinedStocks.map(stock => (
-                    <FeaturedStock key={stock.ticker} stock={stock} />
+                    <PortfolioStocks key={stock.ticker} stock={stock} />
                 ))}
             </div>
         </section>
