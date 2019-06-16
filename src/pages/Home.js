@@ -50,7 +50,7 @@ class Home extends React.Component {
                 </div>
                 <div className="market-graph frame-container">
                     <Swirl fill={backgroundGray} />
-                    <h1>Market Daily Trend</h1>
+                    <h1>Market Portfoilo</h1>
                     <Graph
                         data={intraday}
                         lowDomain={lowDomain}
