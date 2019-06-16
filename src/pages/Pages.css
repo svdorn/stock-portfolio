@@ -51,6 +51,7 @@
 .value-props {
     display: inline-flex;
     margin: auto;
+    flex-wrap: wrap;
 }
 .value-props > div {
     text-align: left;

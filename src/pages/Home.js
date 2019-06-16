@@ -69,13 +69,26 @@ class Home extends React.Component {
                     <div>
                         <img src="/images/StarGreen.png" alt="Stocks" height={40} />
                         <h3>Invest for Free</h3>
-                        <p>Everyone should be able to invest for free.</p>
+                        <p>
+                            Everyone should be able to invest for free. Enjoy our investment
+                            community with no fees, ever.
+                        </p>
                     </div>
                     <div>
                         <img src="/images/StarPurple.png" alt="Stocks" height={40} />
+                        <h3>Donate if you want</h3>
+                        <p>
+                            Donate whatever portion of your investment profits that you deem fit, or
+                            donate nothing at all!
+                        </p>
                     </div>
                     <div>
                         <img src="/images/StarRed.png" alt="Stocks" height={40} />
+                        <h3>Share with the Community</h3>
+                        <p>
+                            Share your finance experiences with your community. Help other members
+                            out.
+                        </p>
                     </div>
                 </div>
             </div>
