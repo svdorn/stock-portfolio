@@ -43,7 +43,7 @@ class Home extends React.Component {
 
         return (
             <div className="container">
-                <div className="first-frame-container home-first-frame">
+                <div className="first-frame-container frame-container">
                     <Swirl fill={backgroundLightGray} />
                     <h1>Featured Stocks</h1>
                     <FeaturedStocksList stocks={featuredStocks} />

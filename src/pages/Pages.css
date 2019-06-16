@@ -16,9 +16,6 @@
     padding-top: 80px;
     width: 100%;
 }
-.home-first-frame {
-    height: 500px;
-}
 .portfolio-container {
     background-color: var(--background-gray);
 }

@@ -22,6 +22,9 @@
     padding: 30px 20px 30px 20px;
     text-align: left;
 }
+.box > h3 {
+    margin: 0 auto 20px auto;
+}
 .box > h5 {
     height: 45px;
     margin: 0;
