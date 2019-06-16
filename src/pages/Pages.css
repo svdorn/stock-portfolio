@@ -49,14 +49,13 @@
 }
 
 .value-props {
-    display: inline-flex;
     margin: auto;
-    flex-wrap: wrap;
 }
 .value-props > div {
     text-align: left;
     width: 250px;
-    margin: 0 40px;
+    margin: 20px 40px;
+    display: inline-block;
 }
 
 .background-blue {
