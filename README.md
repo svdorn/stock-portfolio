@@ -1,5 +1,5 @@
-# Stocks
-Website for Stocks.
+# Stock Portfolio
+Website to give users tools for evaluatings stocks.
 
 ## Getting Started
 
